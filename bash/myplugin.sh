@@ -21,9 +21,11 @@ myplugin_setup(){
 }
 
 myplugin_update(){
+  local pwd
   local root
   local target
 
+  pwd=$(pwd)
   root=$(myplugin_root)
 
   for target in $root/*/*; do
@@ -32,6 +34,8 @@ myplugin_update(){
       git remote update --prune && git fetch --tags --prune && git checkout master && git pull
     fi
   done
+
+  cd $pwd
 }
 
 myplugin_load(){
