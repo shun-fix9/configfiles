@@ -6,5 +6,5 @@ git remote update --prune && git fetch --tags --prune && git checkout master && 
 myplugin_load_all
 myplugin_update
 
-mypassword -p
+tune
 logout
